@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI)
 // Usar las rutas de mensajes
 app.use('/api/mensajes', mensajesRoutes);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`Servidor backend escuchando en el puerto ${PORT}`);
 });
