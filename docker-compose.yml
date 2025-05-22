@@ -1,0 +1,16 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGODB_URI=mongodb+srv://durangoesteban456:1151444098Je.@cluster0.lm2z1.mongodb.net/librovisitas?retryWrites=true&w=majority&appName=Cluster0
+      - PORT=3000
+    env_file:
+      - ./backend/.env
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8080:80"
