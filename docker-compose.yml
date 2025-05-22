@@ -11,6 +11,6 @@ services:
       - ./Backend/.env
 
   frontend:
-    build: ./frontend
+    build: ./Frontend
     ports:
       - "8080:80"
