@@ -38,4 +38,19 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// PUT /api/mensajes/:id - Editar un mensaje por ID
+router.put('/:id', async (req, res) => {
+  try {
+    const { mensaje } = req.body;
+    const actualizado = await Mensaje.findByIdAndUpdate(
+      req.params.id,
+      { mensaje },
+      { new: true }
+    );
+    res.json(actualizado);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al editar el mensaje' });
+  }
+});
+
 export default router;
