@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api/mensajes';
+const API_URL = 'http://localhost:5000/api/mensajes';
 
 function getAvatar(nombre) {
   if (!nombre) return '👤';
