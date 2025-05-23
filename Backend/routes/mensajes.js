@@ -1,5 +1,5 @@
-import express from 'express';
-import Mensaje from '../models/Mensaje.js';
+const express = require('express');
+const Mensaje = require('../models/Mensaje');
 
 const router = express.Router();
 
@@ -28,7 +28,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-// (Opcional) DELETE /api/mensajes/:id - Eliminar un mensaje por ID
+// DELETE /api/mensajes/:id - Eliminar un mensaje por ID
 router.delete('/:id', async (req, res) => {
   try {
     await Mensaje.findByIdAndDelete(req.params.id);
@@ -53,4 +53,4 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-export default router;
+module.exports = router;
