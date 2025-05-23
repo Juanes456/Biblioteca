@@ -1,3 +1,8 @@
+// Verificar autenticación antes de cargar el chat
+if (!localStorage.getItem('token')) {
+  window.location.href = 'login.html';
+}
+
 const socket = io('http://135.119.192.98:5000');
 const username = localStorage.getItem('username');
 document.getElementById('user-name').innerText = username;
