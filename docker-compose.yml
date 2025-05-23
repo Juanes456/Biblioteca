@@ -13,4 +13,4 @@ services:
   frontend:
     build: ./Frontend
     ports:
-      - "2000:80"
+      - "2300:80"
