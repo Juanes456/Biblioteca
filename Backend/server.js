@@ -5,6 +5,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 
 const authRoutes = require('./routes/auth'); // <-- ESTA LÍNEA ES CLAVE
+const mensajesRoutes = require('./routes/mensajes');
+const authMiddleware = require('./authMiddleware');
 
 const app = express();
 const server = http.createServer(app);
@@ -14,6 +16,7 @@ app.use(express.json());
 
 // Rutas
 app.use('/api/auth', authRoutes); // <-- ESTA LÍNEA ES CLAVE
+app.use('/api/mensajes', authMiddleware, mensajesRoutes);
 
 // Conexión a MongoDB
 mongoose.connect(process.env.MONGODB_URI)
